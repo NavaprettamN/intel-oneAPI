@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Video Upload</title>
+    <script href="serverside.js"></script>
+        <script>
+    document.getElementById("uploadForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+
+        var fileInput = document.getElementById("videoFile");
+        var file = fileInput.files[0];
+
+        var formData = new FormData();
+        formData.append("videoFile", file);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/upload-video", true); 
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                alert("Video uploaded successfully!");
+            } else {
+                alert("Error uploading video. Please try again.");
+            }
+        };
+        xhr.send(formData);
+    });
+</script>
+
+   
+</head>
+<body>
+    <h1>Upload Video lecture</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="videoFile" name="videoFile" accept="video/*">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
