@@ -6,6 +6,10 @@
 
 ## A Brief of the Prototype:
   This section must include UML Daigrms and prototype description
+
+  ![Alt text](./readme/readme1.jpg)
+  
+  ![Alt text](./readme/readme2.jpg)
   
 ## Tech Stack: 
    List Down all technologies used to Build the prototype **Clearly mentioning Intel® AI Analytics Toolkits, it's libraries and the SYCL/DCP++ Libraries used**
